@@ -15,6 +15,7 @@ namespace FirestoneAutoSquelch
         private ConfigEntry<string> guid;
         private ConfigEntry<string> name;
         private ConfigEntry<string> version;
+        private ConfigEntry<string> description;
 
         private void Awake()
         {
@@ -26,6 +27,7 @@ namespace FirestoneAutoSquelch
             Config.Bind("General", "Guid", MyPluginInfo.PLUGIN_GUID);
             Config.Bind("General", "Version", MyPluginInfo.PLUGIN_VERSION);
             Config.Bind("General", "DownloadLink", "https://github.com/Zero-to-Heroes/firestone-bepinex-auto-squelch");
+            Config.Bind("General", "Description", "Automatically hide all emotes sent by your opponents");
 
             var harmony = new Harmony("com.firestoneapp.FirestoneAutoSquelch");
             harmony.PatchAll();
